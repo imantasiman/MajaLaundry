@@ -22,8 +22,8 @@ public class MajaLaundry {
 		System.out.println("\n");
 		System.out.println(
 				"============================================================================================================");
-		System.out.println("\t\t\t\t\t\tMAJA LAUNDRY");
-		System.out.println("\t\t\t\t\t\t   KASIR");
+		System.out.println("\t\t\t\t\tSELAMAT DATANG DI MAJA LAUNDRY");
+		System.out.println("\t\t\t\t\t      CABANG MAJALENGKA");
 		System.out.println(
 				"============================================================================================================");
 		System.out.print("Masukan Nama Pegawai Kasir: ");
@@ -71,6 +71,7 @@ public class MajaLaundry {
 			} else {
 				nama_barang[i] = "-";
 				harga[i] = 0;
+				jmlh_kilo[i] = 0;
 
 			}
 
@@ -80,7 +81,8 @@ public class MajaLaundry {
 			// Tampilan Output
 		}
 		System.out.println("\n");
-		System.out.println("\t\t\t\t\t\tMAJA LAUNDRY \n");
+		System.out.println("\t\t\t\t\t\t MAJA LAUNDRY");
+		System.out.println("\t\t\t\t\t\t    KASIR");
 		System.out.println(
 				"============================================================================================================");
 		System.out.println("Nama Pegawai Kasir : " + nama_pegawai + "\t\t" + "Tanggal : " + tanggal);
@@ -104,7 +106,19 @@ public class MajaLaundry {
 		System.out.println("Grantotal Pembayaran: " + total_semua);
 		System.out.print("Pembayaran          : ");
 		bayar = input.nextInt();
-		kembali = bayar - total_semua;
-		System.out.println("Kembalian           : " + kembali);
+
+		// Percabangan If Else untuk menentukan jhumla uang yang harus dibayar
+		if (bayar > total_semua) {
+			kembali = bayar - total_semua;
+			System.out.println("Kembalian           : " + kembali);
+			System.out.println(
+					"\t\t\t\t  TERIMA KASIH SUDAH MAMPIR KE MAJA LAUNDRY");
+			System.out.println(
+					"\t\t\t\t    SEMOGA ANDA PUAS DENGAN PELAYANAN KAMI:)");
+
+		} else if (bayar < total_semua) {
+			System.out.println("\t\t\t\t\tMAAF UANG ANDA TIDAK CUKUP!!!");
+		}
+
 	}
 }
