@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class MajaLaundry {
 
 	public static void main(String[] args) {
-		// Scanner
+		// Scanner;,
 		Scanner input = new Scanner(System.in);
 
 		// Deklarasi Variable
@@ -85,8 +85,8 @@ public class MajaLaundry {
 		System.out.println("\t\t\t\t\t\t    KASIR");
 		System.out.println(
 				"============================================================================================================");
-		System.out.println("Nama Pegawai Kasir : " + nama_pegawai + "\t\t" + "Tanggal : " + tanggal);
-		System.out.println("Jumlah Data        : " + n);
+		System.out.println("Nama Pegawai Kasir : " + nama_pegawai + "\t\t\t\t\t\t" + "Tanggal : " + tanggal);
+		System.out.println("Jumlah Data        : " + n + "\t\t\t\t\t\t\t\tCabang  : Majalengka");
 
 		System.out.println(
 				"============================================================================================================");
@@ -103,21 +103,23 @@ public class MajaLaundry {
 		}
 		System.out.println(
 				"============================================================================================================");
-		System.out.println("Grantotal Pembayaran: " + total_semua);
-		System.out.print("Pembayaran          : ");
+		System.out.println("Grantotal Pembayaran: Rp." + total_semua);
+		System.out.print("Pembayaran          : Rp.");
 		bayar = input.nextInt();
 
 		// Percabangan If Else untuk menentukan jhumla uang yang harus dibayar
-		if (bayar > total_semua) {
+		if (bayar >= total_semua) {
 			kembali = bayar - total_semua;
-			System.out.println("Kembalian           : " + kembali);
+			System.out.println("Kembalian           : Rp." + kembali);
 			System.out.println(
-					"\t\t\t\t  TERIMA KASIH SUDAH MAMPIR KE MAJA LAUNDRY");
+					"\t\t\t\t   TERIMA KASIH SUDAH MAMPIR KE MAJA LAUNDRY");
 			System.out.println(
 					"\t\t\t\t    SEMOGA ANDA PUAS DENGAN PELAYANAN KAMI:)");
+			System.out.println("");
 
 		} else if (bayar < total_semua) {
 			System.out.println("\t\t\t\t\tMAAF UANG ANDA TIDAK CUKUP!!!");
+			System.out.println("");
 		}
 
 	}
