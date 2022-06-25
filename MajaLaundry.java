@@ -1,24 +1,25 @@
 
+//Import untuk memanggil Scanner
 import java.util.Scanner;
 
 public class MajaLaundry {
 
-	public static void main(String[] args) {
-		// Scanner;,
-		Scanner input = new Scanner(System.in);
+	// Scanner;
+	Scanner input = new Scanner(System.in);
 
-		// Deklarasi Variable
-		String nama_pegawai, tanggal;
-		int i, n, kembali, bayar, total_semua = 0;
+	// Deklarasi Variable
+	String nama_pegawai, tanggal;
+	int i, n, kembali, bayar, total_semua = 0;
 
-		// Arraylist
-		String kode_barang[] = new String[10];
-		String nama_barang[] = new String[10];
-		int jmlh_kilo[] = new int[10];
-		int harga[] = new int[10];
-		int total_harga[] = new int[10];
+	// Arraylist
+	String kode_barang[] = new String[10];
+	String nama_barang[] = new String[10];
+	int jmlh_kilo[] = new int[10];
+	int harga[] = new int[10];
+	int total_harga[] = new int[10];
 
-		// Tampilan Input
+	// Method Data barang
+	public void setdata() {
 		System.out.println("\n");
 		System.out.println(
 				"============================================================================================================");
@@ -35,12 +36,13 @@ public class MajaLaundry {
 		System.out.println(
 				"============================================================================================================");
 
-		// Perulangan menggunakan For
+		// Perulangan menggunakan For untuk menentukan jumlah data barang
 		for (i = 0; i < n; i++) {
 			int number = i + 1;
 			System.out.print("Data ke-" + number + " Masukan Kode Barang : ");
 			kode_barang[i] = input.next();
 			System.out.print("Jumlah Kilo Gram              : ");
+			System.out.print("");
 			jmlh_kilo[i] = input.nextInt();
 
 			// Percabangan IF Else untuk menentukan pilihan barang
@@ -74,12 +76,12 @@ public class MajaLaundry {
 				jmlh_kilo[i] = 0;
 
 			}
-
+			// Perhitungan total harga dan total semua
 			total_harga[i] = harga[i] * jmlh_kilo[i];
 			total_semua = total_semua + total_harga[i];
 
-			// Tampilan Output
 		}
+		// Tampilan Output atau struk
 		System.out.println("\n");
 		System.out.println("\t\t\t\t\t\t MAJA LAUNDRY");
 		System.out.println("\t\t\t\t\t\t    KASIR");
@@ -94,12 +96,11 @@ public class MajaLaundry {
 		System.out.println(
 				"============================================================================================================");
 
-		// Perulangan For
+		// Perulangan For untuk menentukan jumlah data barang
 		for (i = 0; i < n; i++) {
 			int number = i + 1;
 			System.out.println(+number + "\t\t" + kode_barang[i] + "\t\t\t" + nama_barang[i] + "\t\t" + harga[i]
 					+ "\t\t" + jmlh_kilo[i] + "\t\t" + total_harga[i]);
-
 		}
 		System.out.println(
 				"============================================================================================================");
@@ -107,7 +108,7 @@ public class MajaLaundry {
 		System.out.print("Pembayaran          : Rp.");
 		bayar = input.nextInt();
 
-		// Percabangan If Else untuk menentukan jhumla uang yang harus dibayar
+		// Percabangan If Else untuk menentukan jumlah pembayaran
 		if (bayar >= total_semua) {
 			kembali = bayar - total_semua;
 			System.out.println("Kembalian           : Rp." + kembali);
@@ -121,6 +122,35 @@ public class MajaLaundry {
 			System.out.println("\t\t\t\t\tMAAF UANG ANDA TIDAK CUKUP!!!");
 			System.out.println("");
 		}
+	}
 
+	public static void main(String[] args) {
+		// Scanner
+		Scanner getint = new Scanner(System.in);
+		Scanner getdata = new Scanner(System.in);
+
+		// Variable
+		int a, x = 0, menu = 0;
+		String npm;
+		MajaLaundry[] mln = new MajaLaundry[128];
+
+		// Perulangan While untuk menentukan pilihan menu
+		while (menu != 2) {
+			System.out.print("PILIHAN MENU MAJA LAUNDRY");
+			System.out.print("\n1. Input\n2. Exit\nMasukan Pilihan : ");
+			menu = getint.nextInt();
+			// Percabangan IF Else untuk pilihan menu
+			if (menu == 1) {
+				x++;
+				mln[x] = new MajaLaundry();
+				mln[x].setdata();
+			} else if (menu == 2) {
+				System.out.print("");
+				System.out.println("ANDA KELUAR");
+			} else {
+				System.out.print("");
+				System.out.println("PILIHAN MENU TIDAK TERSEDIA");
+			}
+		}
 	}
 }
