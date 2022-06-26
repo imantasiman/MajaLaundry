@@ -11,7 +11,7 @@ public class MajaLaundry {
 	String nama_pegawai, tanggal;
 	int i, n, kembali, bayar, total_semua = 0;
 
-	// Arraylist
+	// Deklarasi variable Arraylist
 	String kode_barang[] = new String[10];
 	String nama_barang[] = new String[10];
 	int jmlh_kilo[] = new int[10];
@@ -42,7 +42,6 @@ public class MajaLaundry {
 			System.out.print("Data ke-" + number + " Masukan Kode Barang : ");
 			kode_barang[i] = input.next();
 			System.out.print("Jumlah Kilo Gram              : ");
-			System.out.print("");
 			jmlh_kilo[i] = input.nextInt();
 
 			// Percabangan IF Else untuk menentukan pilihan barang
@@ -127,17 +126,18 @@ public class MajaLaundry {
 	public static void main(String[] args) {
 		// Scanner
 		Scanner getint = new Scanner(System.in);
-		Scanner getdata = new Scanner(System.in);
 
-		// Variable
-		int a, x = 0, menu = 0;
-		String npm;
-		MajaLaundry[] mln = new MajaLaundry[128];
+		// Deklarasi Variable
+		int x = 0, menu = 0;
+		String maja;
+
+		// Deklarasi variable array object MajaLaundry untuk dicari
+		MajaLaundry[] mln = new MajaLaundry[100];
 
 		// Perulangan While untuk menentukan pilihan menu
 		while (menu != 2) {
-			System.out.print("PILIHAN MENU MAJA LAUNDRY");
-			System.out.print("\n1. Input\n2. Exit\nMasukan Pilihan : ");
+			System.out.print("MENU UTAMA");
+			System.out.print("\n1. Login\n2. Logout\nMASUKAN PILIHAN : ");
 			menu = getint.nextInt();
 			// Percabangan IF Else untuk pilihan menu
 			if (menu == 1) {
@@ -146,10 +146,10 @@ public class MajaLaundry {
 				mln[x].setdata();
 			} else if (menu == 2) {
 				System.out.print("");
-				System.out.println("ANDA KELUAR");
+				System.out.println("ANDA TELAH LOGOUT DARI PROGRAM");
 			} else {
 				System.out.print("");
-				System.out.println("PILIHAN MENU TIDAK TERSEDIA");
+				System.out.println("MAAF PILIHAN MENU TIDAK TERSEDIA");
 			}
 		}
 	}
